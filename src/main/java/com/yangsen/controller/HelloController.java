@@ -1,17 +1,15 @@
 package com.yangsen.controller;
 
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-public class HelloController implements Controller {
-    @Override
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("msg","hello springmvc");
-        mv.setViewName("hello");
-        return mv;
+@Controller
+public class HelloController {
+    @RequestMapping("/hello")
+    public String hello(Model model){
+        model.addAttribute("msg","hello springmvc! annotation");
+        //return的字符串是文件名字，eg:hello.jsp
+        return "hello";
     }
 }
