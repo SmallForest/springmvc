@@ -14,6 +14,7 @@ public class RestController {
         String r = a + b;
         model.addAttribute("msg", "a+b=" + r);
         //return的字符串是文件名字，eg:hello.jsp
+        //想重定向 return "redirect:hello" 加了redirect:
         return "hello";
     }
 }
