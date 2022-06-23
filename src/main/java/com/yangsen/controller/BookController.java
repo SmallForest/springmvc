@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -51,6 +52,12 @@ public class BookController {
     @RequestMapping("/saveBook")
     public String saveBook(Books books){
         booksService.updateBook(books);
+        return "redirect:/book/allBook";
+    }
+
+    @RequestMapping("/delBook/{id}")
+    public String delBook(@PathVariable int id){
+        booksService.deleteBookById(id);
         return "redirect:/book/allBook";
     }
 

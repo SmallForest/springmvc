@@ -47,7 +47,7 @@
                             <td>
                                 <a href="${pageContext.request.contextPath}/book/toEditPage?id=${book.bookID}">编辑</a>
                                 &nbsp;|&nbsp;
-                                <a href="">删除</a></td>
+                                <a href="${pageContext.request.contextPath}/book/delBook/${book.bookID}">删除</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
