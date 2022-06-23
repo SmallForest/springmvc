@@ -21,6 +21,11 @@
                     <h1>书籍列表</h1>
                 </div>
             </div>
+            <div class="co-md-12 column">
+                <a href="${pageContext.request.contextPath}/book/toAddPage">
+                    <button type="button" class="btn btn-primary">添加书籍</button>
+                </a>
+            </div>
         </div>
         <div class="row clearfix">
             <div class="co-md-12 column">

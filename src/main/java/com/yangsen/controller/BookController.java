@@ -28,5 +28,17 @@ public class BookController {
         return "allBook";
     }
 
+    @RequestMapping("/toAddPage")
+    public String addPage(){
+        return "addPage";
+    }
+
+    @RequestMapping("/addBook")
+    public String addBook(Books books){
+        System.out.println("addBook===>"+books);
+        booksService.addBook(books);
+        return "redirect:/book/allBook";
+    }
+
 
 }
