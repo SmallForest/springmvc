@@ -2,6 +2,7 @@ package com.yangsen.controller;
 
 import com.yangsen.pojo.Books;
 import com.yangsen.service.BooksService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -37,6 +38,19 @@ public class BookController {
     public String addBook(Books books){
         System.out.println("addBook===>"+books);
         booksService.addBook(books);
+        return "redirect:/book/allBook";
+    }
+
+    @RequestMapping("/toEditPage")
+    public String toEditPage(int id,Model model){
+        Books books = booksService.queryBookById(id);
+        model.addAttribute("EBook",books);
+        return "editPage";
+    }
+
+    @RequestMapping("/saveBook")
+    public String saveBook(Books books){
+        booksService.updateBook(books);
         return "redirect:/book/allBook";
     }
 
