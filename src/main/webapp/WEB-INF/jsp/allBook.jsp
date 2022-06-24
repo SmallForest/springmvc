@@ -25,6 +25,9 @@
                 <a href="${pageContext.request.contextPath}/book/toAddPage">
                     <button type="button" class="btn btn-primary">添加书籍</button>
                 </a>
+                <a href="${pageContext.request.contextPath}/logOut">
+                    <button type="button" class="btn btn-danger">退出登录</button>
+                </a>
             </div>
         </div>
         <div class="row clearfix">

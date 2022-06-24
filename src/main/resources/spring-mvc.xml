@@ -35,4 +35,12 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    <!--拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- **表示当前uri和下面多层uri ,*只表示一层uri-->
+            <mvc:mapping path="/book/**"/>
+            <bean class="com.yangsen.config.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
